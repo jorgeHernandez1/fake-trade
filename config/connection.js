@@ -13,7 +13,9 @@ if (process.env.JAWSDB_URL) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: process.env.LOCAL_PORT
+      port: process.env.LOCAL_PORT,
     }
-  ); 
-} 
+  );
+}
+
+module.exports = sequelize;
