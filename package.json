@@ -1,0 +1,25 @@
+{
+  "name": "fake-trade",
+  "version": "1.0.0",
+  "description": "Take your fantasy portfolio to the moon 🚀",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgeHernandez1/fake-trade.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgeHernandez1/fake-trade/issues"
+  },
+  "homepage": "https://github.com/jorgeHernandez1/fake-trade#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  }
+}
