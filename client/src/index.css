@@ -1,0 +1,14 @@
+#root {
+  color: rgb(231, 231, 243);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+nav {
+  background-color: rgb(39, 36, 31);
+}

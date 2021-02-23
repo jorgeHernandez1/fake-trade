@@ -1,30 +1,30 @@
-const express = require('express');
-const session = require('express-session');
-//const routes = require('./controllers');
-
+const express = require('express');  
+const APIroutes = require('./routes');
 const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const { User } = require("./models");
 const app = express();
+const cors = require("cors");
+require("dotenv").config();
+
 const PORT = process.env.PORT || 3001;
-
-const sess = {
-  secret: 'Secreto super super',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
-
-app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-//app.use(routes);
+require("./config/passport")( User );
 
-sequelize.sync({ force: false }).then(() => {
+app.use(APIroutes);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+// Send every request to the React app
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
