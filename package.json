@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build && cd client && npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "react-scripts": "3.4.3"
   }
 }
