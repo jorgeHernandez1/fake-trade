@@ -2,10 +2,16 @@
   "name": "fake-trade",
   "version": "1.0.0",
   "description": "Take your fantasy portfolio to the moon 🚀",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -18,6 +24,10 @@
     "url": "https://github.com/jorgeHernandez1/fake-trade/issues"
   },
   "homepage": "https://fake-trade.herokuapp.com/",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
   "dependencies": {
     "bcrypt": "^5.0.0",
     "cors": "^2.8.5",
@@ -25,9 +35,10 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "sequelize": "^6.5.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "sequelize": "^6.5.0"
   }
 }
