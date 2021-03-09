@@ -20,6 +20,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(APIroutes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
