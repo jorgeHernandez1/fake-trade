@@ -1,2 +1,4 @@
 export { apiAuth } from './auth';
-//export { users } from './users';
+export { apiUsers } from './users';
+export { apiIEX } from './iex'
+export { apiTransactions } from './transactions'

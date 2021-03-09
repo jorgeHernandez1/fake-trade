@@ -3,10 +3,16 @@ import { Row, Col } from 'react-materialize';
 
 export function CashManagement() {
   return (
-    <Row>
-      <Col m={2}>
+    <Row className='text-black'>
+      <Row m={2}>
         <h1>Cash</h1>
-      </Col>
+      </Row>
+      <Row m={2}>
+        <h1>Cash</h1>
+      </Row>
+      <Row m={2}>
+        <h1>Cash</h1>
+      </Row>
     </Row>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'materialize-css';
 import {
   Card,
@@ -44,7 +44,7 @@ export function Home() {
             <Col className='left-align' s={9}>
               <p>
                 With our FakeTrade sandbox environment you can learn to day
-                trade without having to use any of your hard earned money🤑.
+                trade without having to use any of your hard earned money<span role="img" aria-label="Cash Face Emoji">🤑</span>.
               </p>
             </Col>
           </Row>
@@ -68,10 +68,10 @@ export function Home() {
           </Row>
           <Row className='valign-wrapper'>
             <Col className='center-align' s={3}>
-              <h6>Have Fun</h6>
+              <h6>Have fun!</h6>
             </Col>
             <Col className='left-align' s={9}>
-              <p>Will you pick then next GME?</p>
+              <p>Enjoy some guiltless trading while taking your skills to the moon<span role="img" aria-label="Rocket Emoji">🚀</span></p>
             </Col>
           </Row>
         </Card>

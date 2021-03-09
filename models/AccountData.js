@@ -32,7 +32,7 @@ AccountData.init(
     },
     cash_balance: {
       type: DataTypes.DECIMAL(20, 2),
-      defaultValue: 0,
+      defaultValue: 10000,
     },
     amount_pending_deposit: {
       type: DataTypes.DECIMAL(20, 2),

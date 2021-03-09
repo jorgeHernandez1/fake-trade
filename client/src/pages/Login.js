@@ -28,9 +28,7 @@ export function Login() {
   }
 
   function _handleClick() {
-
     const { email, password } = state;
-
     apiAuth
       .login(email, password)
       .then((token) => {
@@ -40,11 +38,7 @@ export function Login() {
         });
       })
       .catch((err) => {
-        setState(
-          { ...state,
-            error: err.toString(),
-            password: ''
-          });
+        setState({ ...state, error: err.toString(), password: '' });
       });
   }
 
@@ -92,7 +86,7 @@ export function Login() {
               />
             </Col>
             <Col s={12}>
-                <label className='red-text'>{state.error}</label>
+              <label className='red-text'>{state.error}</label>
             </Col>
           </Row>
         </Card>
